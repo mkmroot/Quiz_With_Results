@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .answers {
+            list-style: none;
+            padding: 0;
+        }
+        .answers li {
+            margin-bottom: 10px;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz</h1>
+        <div class="question" data-question="1">
+            <p>What is the capital of France?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="answer1" value="A"> A) Berlin</label></li>
+                <li><label><input type="radio" name="answer1" value="B"> B) Madrid</label></li>
+                <li><label><input type="radio" name="answer1" value="C"> C) Paris</label></li>
+                <li><label><input type="radio" name="answer1" value="D"> D) Rome</label></li>
+            </ul>
+        </div>
+        <div class="question" data-question="2">
+            <p>What is the largest planet in our solar system?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="answer2" value="A"> A) Earth</label></li>
+                <li><label><input type="radio" name="answer2" value="B"> B) Jupiter</label></li>
+                <li><label><input type="radio" name="answer2" value="C"> C) Mars</label></li>
+                <li><label><input type="radio" name="answer2" value="D"> D) Venus</label></li>
+            </ul>
+        </div>
+        <div class="question" data-question="3">
+            <p>Who wrote "Romeo and Juliet"?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="answer3" value="A"> A) Charles Dickens</label></li>
+                <li><label><input type="radio" name="answer3" value="B"> B) William Shakespeare</label></li>
+                <li><label><input type="radio" name="answer3" value="C"> C) Mark Twain</label></li>
+                <li><label><input type="radio" name="answer3" value="D"> D) Jane Austen</label></li>
+            </ul>
+        </div>
+        <div class="question" data-question="4">
+            <p>What is the chemical symbol for water?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="answer4" value="A"> A) O</label></li>
+                <li><label><input type="radio" name="answer4" value="B"> B) H2O</label></li>
+                <li><label><input type="radio" name="answer4" value="C"> C) CO2</label></li>
+                <li><label><input type="radio" name="answer4" value="D"> D) NaCl</label></li>
+            </ul>
+        </div>
+        <div class="question" data-question="5">
+            <p>Which planet is known as the Red Planet?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="answer5" value="A"> A) Venus</label></li>
+                <li><label><input type="radio" name="answer5" value="B"> B) Mars</label></li>
+                <li><label><input type="radio" name="answer5" value="C"> C) Jupiter</label></li>
+                <li><label><input type="radio" name="answer5" value="D"> D) Saturn</label></li>
+            </ul>
+        </div>
+        <div class="question" data-question="6">
+            <p>What is the square root of 64?</p>
+            <ul class="answers">
+                <li><label><input type="radio" name="answer6" value="A"> A) 6</label></li>
+                <li><label><input type="radio" name="answer6" value="B"> B) 8</label></li>
+                <li><label><input type="radio" name="answer6" value="C"> C) 10</label></li>
+                <li><label><input type="radio" name="answer6" value="D"> D) 12</label></li>
+            </ul>
+        </div>
+        <button id="submit">Submit</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        document.getElementById('submit').addEventListener('click', function() {
+            const questions = [
+                { correct: 'C' }, // Question 1
+                { correct: 'B' }, // Question 2
+                { correct: 'B' }, // Question 3
+                { correct: 'B' }, // Question 4
+                { correct: 'B' }, // Question 5
+                { correct: 'B' }  // Question 6
+            ];
+
+            let score = 0;
+            let total = questions.length;
+
+            for (let i = 0; i < total; i++) {
+                const answers = document.getElementsByName(`answer${i + 1}`);
+                let selectedAnswer = null;
+
+                for (const answer of answers) {
+                    if (answer.checked) {
+                        selectedAnswer = answer.value;
+                        break;
+                    }
+                }
+
+                if (selectedAnswer === questions[i].correct) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+            resultDiv.textContent = `You scored ${score} out of ${total}!`;
+            resultDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
