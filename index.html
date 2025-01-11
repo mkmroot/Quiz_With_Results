@@ -46,77 +46,98 @@
 <body>
     <div class="container">
         <h1>Quiz</h1>
-        <div class="question" data-question="1">
-            <p>What is the capital of France?</p>
-            <ul class="answers">
-                <li><label><input type="radio" name="answer1" value="A"> A) Berlin</label></li>
-                <li><label><input type="radio" name="answer1" value="B"> B) Madrid</label></li>
-                <li><label><input type="radio" name="answer1" value="C"> C) Paris</label></li>
-                <li><label><input type="radio" name="answer1" value="D"> D) Rome</label></li>
-            </ul>
+        <div id="name-container">
+            <label for="username">Enter your name:</label>
+            <input type="text" id="username" placeholder="Your Name">
+            <button id="start-quiz">Start Quiz</button>
         </div>
-        <div class="question" data-question="2">
-            <p>What is the largest planet in our solar system?</p>
-            <ul class="answers">
-                <li><label><input type="radio" name="answer2" value="A"> A) Earth</label></li>
-                <li><label><input type="radio" name="answer2" value="B"> B) Jupiter</label></li>
-                <li><label><input type="radio" name="answer2" value="C"> C) Mars</label></li>
-                <li><label><input type="radio" name="answer2" value="D"> D) Venus</label></li>
-            </ul>
+        <div id="quiz-container" style="display: none;">
+            <div class="question" data-question="1">
+                <p>What is the capital of France?</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="answer1" value="A"> A) Berlin</label></li>
+                    <li><label><input type="radio" name="answer1" value="B"> B) Madrid</label></li>
+                    <li><label><input type="radio" name="answer1" value="C"> C) Paris</label></li>
+                    <li><label><input type="radio" name="answer1" value="D"> D) Rome</label></li>
+                </ul>
+            </div>
+            <div class="question" data-question="2">
+                <p>What is the largest planet in our solar system?</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="answer2" value="A"> A) Earth</label></li>
+                    <li><label><input type="radio" name="answer2" value="B"> B) Jupiter</label></li>
+                    <li><label><input type="radio" name="answer2" value="C"> C) Mars</label></li>
+                    <li><label><input type="radio" name="answer2" value="D"> D) Venus</label></li>
+                </ul>
+            </div>
+            <div class="question" data-question="3">
+                <p>Who wrote "Romeo and Juliet"?</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="answer3" value="A"> A) Charles Dickens</label></li>
+                    <li><label><input type="radio" name="answer3" value="B"> B) William Shakespeare</label></li>
+                    <li><label><input type="radio" name="answer3" value="C"> C) Mark Twain</label></li>
+                    <li><label><input type="radio" name="answer3" value="D"> D) Jane Austen</label></li>
+                </ul>
+            </div>
+            <div class="question" data-question="4">
+                <p>What is the chemical symbol for water?</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="answer4" value="A"> A) O</label></li>
+                    <li><label><input type="radio" name="answer4" value="B"> B) H2O</label></li>
+                    <li><label><input type="radio" name="answer4" value="C"> C) CO2</label></li>
+                    <li><label><input type="radio" name="answer4" value="D"> D) NaCl</label></li>
+                </ul>
+            </div>
+            <div class="question" data-question="5">
+                <p>Which planet is known as the Red Planet?</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="answer5" value="A"> A) Venus</label></li>
+                    <li><label><input type="radio" name="answer5" value="B"> B) Mars</label></li>
+                    <li><label><input type="radio" name="answer5" value="C"> C) Jupiter</label></li>
+                    <li><label><input type="radio" name="answer5" value="D"> D) Saturn</label></li>
+                </ul>
+            </div>
+            <div class="question" data-question="6">
+                <p>What is the square root of 64?</p>
+                <ul class="answers">
+                    <li><label><input type="radio" name="answer6" value="A"> A) 6</label></li>
+                    <li><label><input type="radio" name="answer6" value="B"> B) 8</label></li>
+                    <li><label><input type="radio" name="answer6" value="C"> C) 10</label></li>
+                    <li><label><input type="radio" name="answer6" value="D"> D) 12</label></li>
+                </ul>
+            </div>
+            <button id="submit">Submit</button>
         </div>
-        <div class="question" data-question="3">
-            <p>Who wrote "Romeo and Juliet"?</p>
-            <ul class="answers">
-                <li><label><input type="radio" name="answer3" value="A"> A) Charles Dickens</label></li>
-                <li><label><input type="radio" name="answer3" value="B"> B) William Shakespeare</label></li>
-                <li><label><input type="radio" name="answer3" value="C"> C) Mark Twain</label></li>
-                <li><label><input type="radio" name="answer3" value="D"> D) Jane Austen</label></li>
-            </ul>
-        </div>
-        <div class="question" data-question="4">
-            <p>What is the chemical symbol for water?</p>
-            <ul class="answers">
-                <li><label><input type="radio" name="answer4" value="A"> A) O</label></li>
-                <li><label><input type="radio" name="answer4" value="B"> B) H2O</label></li>
-                <li><label><input type="radio" name="answer4" value="C"> C) CO2</label></li>
-                <li><label><input type="radio" name="answer4" value="D"> D) NaCl</label></li>
-            </ul>
-        </div>
-        <div class="question" data-question="5">
-            <p>Which planet is known as the Red Planet?</p>
-            <ul class="answers">
-                <li><label><input type="radio" name="answer5" value="A"> A) Venus</label></li>
-                <li><label><input type="radio" name="answer5" value="B"> B) Mars</label></li>
-                <li><label><input type="radio" name="answer5" value="C"> C) Jupiter</label></li>
-                <li><label><input type="radio" name="answer5" value="D"> D) Saturn</label></li>
-            </ul>
-        </div>
-        <div class="question" data-question="6">
-            <p>What is the square root of 64?</p>
-            <ul class="answers">
-                <li><label><input type="radio" name="answer6" value="A"> A) 6</label></li>
-                <li><label><input type="radio" name="answer6" value="B"> B) 8</label></li>
-                <li><label><input type="radio" name="answer6" value="C"> C) 10</label></li>
-                <li><label><input type="radio" name="answer6" value="D"> D) 12</label></li>
-            </ul>
-        </div>
-        <button id="submit">Submit</button>
         <div id="result" class="result"></div>
     </div>
 
     <script>
+        document.getElementById('start-quiz').addEventListener('click', function() {
+            const username = document.getElementById('username').value;
+            if (!username) {
+                alert('Please enter your name before starting the quiz.');
+                return;
+            }
+
+            sessionStorage.setItem('username', username);
+            document.getElementById('name-container').style.display = 'none';
+            document.getElementById('quiz-container').style.display = 'block';
+        });
+
         document.getElementById('submit').addEventListener('click', function() {
+            const username = sessionStorage.getItem('username');
             const questions = [
-                { correct: 'C' }, // Question 1
-                { correct: 'B' }, // Question 2
-                { correct: 'B' }, // Question 3
-                { correct: 'B' }, // Question 4
-                { correct: 'B' }, // Question 5
-                { correct: 'B' }  // Question 6
+                { question: "What is the capital of France?", correct: 'C', correctText: 'C) Paris' },
+                { question: "What is the largest planet in our solar system?", correct: 'B', correctText: 'B) Jupiter' },
+                { question: "Who wrote \"Romeo and Juliet\"?", correct: 'B', correctText: 'B) William Shakespeare' },
+                { question: "What is the chemical symbol for water?", correct: 'B', correctText: 'B) H2O' },
+                { question: "Which planet is known as the Red Planet?", correct: 'B', correctText: 'B) Mars' },
+                { question: "What is the square root of 64?", correct: 'B', correctText: 'B) 8' }
             ];
 
             let score = 0;
             let total = questions.length;
+            let resultText = `${username} scored \n`;
 
             for (let i = 0; i < total; i++) {
                 const answers = document.getElementsByName(`answer${i + 1}`);
@@ -132,12 +153,25 @@
                 if (selectedAnswer === questions[i].correct) {
                     score++;
                 }
+                resultText += `${i + 1}. ${questions[i].question} \nCorrect Answer: ${questions[i].correctText}\n`;
             }
 
             const resultDiv = document.getElementById('result');
-            resultDiv.textContent = `You scored ${score} out of ${total}!`;
+            resultDiv.textContent = `${username}, you scored ${score} out of ${total}!`;
             resultDiv.style.display = 'block';
+
+            resultText += `\nTotal Score: ${score} out of ${total}`;
+            saveResultToFile(resultText);
         });
+
+        function saveResultToFile(data) {
+            const blob = new Blob([data], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.download = 'quiz_result.txt';
+            link.click();
+        }
     </script>
 </body>
 </html>
+
